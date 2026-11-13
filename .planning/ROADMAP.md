@@ -25,12 +25,16 @@ Agentic Harness v1.2 transforms stochastic Llama 3.1 8B Instant generation into 
   2. `LLMClient` protocol supports Groq Cloud (`llama-3.1-8b-instant`) as default with automatic/configurable Ollama local fallback.
   3. Client sessions explicitly set `max_retries=0` to guarantee zero silent HTTP transport retries.
   4. Temperature is strictly fixed at 0.0 across all calls to ensure reproducible reliability metrics.
-**Plans**: 3 plans (TBD)
+**Plans**: 3 plans
 
-Plans:
-- [ ] 01-01: Define core contracts and shared data types
-- [ ] 01-02: Implement Groq and Ollama client adapters with `max_retries=0`
-- [ ] 01-03: Add contract unit tests and provider switching validation
+Wave 1:
+- [ ] 01-01: Shared Core Contracts & Type Definitions (Pydantic schemas, enums, RateLimitError)
+
+Wave 2 *(blocked on Wave 1)*:
+- [ ] 01-02: Pluggable LLM Client Implementation (LLMClient ABC, GroqClient with max_retries=0, OllamaClient)
+
+Wave 3 *(blocked on Waves 1 & 2)*:
+- [ ] 01-03: Contract & Client Verification Suite (pytest suite for contracts and mock transport clients)
 
 ### Phase 2: Dual Validator Engine & Registry
 **Goal**: Deliver a two-tier validator engine supporting zero-code declarative schemas and pure custom Python functions sharing the `ValidatorResult` contract.
@@ -122,3 +126,4 @@ Plans:
 Plans:
 - [ ] 07-01: Assemble 54-sample benchmark dataset and automated test runner
 - [ ] 07-02: Execute evaluation runs, generate comparative metrics report, and verify all invariant targets
+
