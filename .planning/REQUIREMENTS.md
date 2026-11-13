@@ -75,15 +75,37 @@ Explicitly excluded. Documented to prevent scope creep.
 
 ## Traceability
 
-Which phases cover which requirements. (To be mapped in ROADMAP.md).
+Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CLIENT-01..04 | Phase 1 | Pending |
-| VALID-01..04  | Phase 2 | Pending |
-| SCORE-01..03  | Phase 3 | Pending |
-| CRITIC-01..03 | Phase 4 | Pending |
-| RETRY-01..04  | Phase 5 | Pending |
-| CACHE-01..04  | Phase 6 | Pending |
-| UI-01..04     | Phase 6 | Pending |
-| BENCH-01..04  | Phase 7 | Pending |
+| CLIENT-01 | Phase 1 | Pending |
+| CLIENT-02 | Phase 1 | Pending |
+| CLIENT-03 | Phase 1 | Pending |
+| CLIENT-04 | Phase 1 | Pending |
+| VALID-01 | Phase 2 | Pending |
+| VALID-02 | Phase 2 | Pending |
+| VALID-03 | Phase 2 | Pending |
+| VALID-04 | Phase 2 | Pending |
+| SCORE-01 | Phase 3 | Pending |
+| SCORE-02 | Phase 3 | Pending |
+| SCORE-03 | Phase 3 | Pending |
+| CRITIC-01 | Phase 4 | Pending |
+| CRITIC-02 | Phase 4 | Pending |
+| CRITIC-03 | Phase 4 | Pending |
+| RETRY-01 | Phase 5 | Pending |
+| RETRY-02 | Phase 5 | Pending |
+| RETRY-03 | Phase 5 | Pending |
+| RETRY-04 | Phase 5 | Pending |
+| CACHE-01 | Phase 6 | Pending |
+| CACHE-02 | Phase 6 | Pending |
+| CACHE-03 | Phase 6 | Pending |
+| CACHE-04 | Phase 6 | Pending |
+| UI-01 | Phase 6 | Pending |
+| UI-02 | Phase 6 | Pending |
+| UI-03 | Phase 6 | Pending |
+| UI-04 | Phase 6 | Pending |
+| BENCH-01 | Phase 7 | Pending |
+| BENCH-02 | Phase 7 | Pending |
+| BENCH-03 | Phase 7 | Pending |
+| BENCH-04 | Phase 7 | Pending |
