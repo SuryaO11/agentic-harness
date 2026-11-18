@@ -7,3 +7,4 @@ if errorlevel 1 (
     echo Dashboard stopped with error.
     pause
 )
+
