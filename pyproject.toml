@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-harness"
+version = "1.2.0"
+description = "Explainable Self-Correcting Reliability Framework for LLMs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Surya Ranjan", email = "surya2004ranjan@gmail.com"}
+]
+dependencies = [
+    "streamlit>=1.30.0",
+    "pydantic>=2.0.0",
+    "jsonschema>=4.20.0",
+    "httpx>=0.25.0",
+    "sentence-transformers>=2.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+]
+
+[project.scripts]
+agentic-dashboard = "harness.dashboard:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
