@@ -25,3 +25,4 @@
 ### 5. Stale Cache Serving Outdated Validation Rules
 - **Pitfall**: If a developer changes a regex pattern or adds a new required field to a `TaskSpec`, naive prompt-only cache lookups return previously cached responses that violate the new rules.
 - **Mitigation**: Include the canonical hash of the active validator set in the SHA256 cache key. Any change to validator definitions automatically yields a cache miss.
+

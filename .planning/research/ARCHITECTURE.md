@@ -83,3 +83,4 @@
    - `response_text: str`
    - `reliability_score: float` (must be ≥ 0.80 to be inserted)
    - `created_at: str`
+

@@ -82,3 +82,4 @@ class TaskSpec(BaseModel):
     min_length: Optional[int] = None
     max_length: Optional[int] = None
     custom_validators: List[str] = Field(default_factory=list)
+

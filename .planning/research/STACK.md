@@ -33,3 +33,4 @@ pip install streamlit pydantic sentence-transformers groq ollama pytest
 
 ### Critical Configuration Rules
 - **Explicit SDK Retries**: Pass `max_retries=0` to the Groq/Ollama client instances to ensure the SDK does not perform silent transport retries that artificially inflate retry counts.
+

@@ -24,3 +24,4 @@ files_modified:
 - Tested `LLMClient` temperature enforcement - verified.
 - Tested `GroqClient` with custom model configuration - verified.
 - Tested `get_llm_client()` with `LLM_PROVIDER=ollama` producing `OllamaClient` - verified.
+

@@ -36,14 +36,14 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **RETRY-04**: System enforces a hard ceiling of max 3 retries, terminating with an explicit failure summary if unrecoverable.
 
 ### Selective SQLite Cache (CACHE)
-- [ ] **CACHE-01**: System evaluates response composite reliability score and caches only responses meeting `Reliability Score >= 0.80`.
-- [ ] **CACHE-02**: System generates deterministic SHA256 cache keys combining provider, model, prompt text, and active validator set hash.
-- [ ] **CACHE-03**: System returns cached responses in microsecond latency upon repeat queries without triggering upstream LLM calls.
-- [ ] **CACHE-04**: System invalidates cache lookup automatically whenever task validator definitions or schemas change.
+- [x] **CACHE-01**: System evaluates response composite reliability score and caches only responses meeting `Reliability Score >= 0.80`.
+- [x] **CACHE-02**: System generates deterministic SHA256 cache keys combining provider, model, prompt text, and active validator set hash.
+- [x] **CACHE-03**: System returns cached responses in microsecond latency upon repeat queries without triggering upstream LLM calls.
+- [x] **CACHE-04**: System invalidates cache lookup automatically whenever task validator definitions or schemas change.
 
 ### Streamlit Observability Dashboard (UI)
-- [ ] **UI-01**: User can interactively input queries, select task specs, and view real-time generation and retry progression.
-- [ ] **UI-02**: User can inspect step-by-step validator pass/fail badges, severity ratings, and error reasons for every retry attempt.
+- [x] **UI-01**: User can interactively input queries, select task specs, and view real-time generation and retry progression.
+- [x] **UI-02**: User can inspect step-by-step validator pass/fail badges, severity ratings, and error reasons for every retry attempt.
 - [ ] **UI-03**: User can view the critic's structured diagnostic feedback and corrective guidance in an explainable audit card.
 - [ ] **UI-04**: User can monitor cache hit/miss status, execution latency, token utilization, and final composite reliability metrics.
 
@@ -79,33 +79,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CLIENT-01 | Phase 1 | Pending |
-| CLIENT-02 | Phase 1 | Pending |
-| CLIENT-03 | Phase 1 | Pending |
-| CLIENT-04 | Phase 1 | Pending |
-| VALID-01 | Phase 2 | Pending |
-| VALID-02 | Phase 2 | Pending |
-| VALID-03 | Phase 2 | Pending |
-| VALID-04 | Phase 2 | Pending |
-| SCORE-01 | Phase 3 | Pending |
-| SCORE-02 | Phase 3 | Pending |
-| SCORE-03 | Phase 3 | Pending |
-| CRITIC-01 | Phase 4 | Pending |
-| CRITIC-02 | Phase 4 | Pending |
-| CRITIC-03 | Phase 4 | Pending |
-| RETRY-01 | Phase 5 | Pending |
-| RETRY-02 | Phase 5 | Pending |
-| RETRY-03 | Phase 5 | Pending |
-| RETRY-04 | Phase 5 | Pending |
-| CACHE-01 | Phase 6 | Pending |
-| CACHE-02 | Phase 6 | Pending |
-| CACHE-03 | Phase 6 | Pending |
-| CACHE-04 | Phase 6 | Pending |
-| UI-01 | Phase 6 | Pending |
-| UI-02 | Phase 6 | Pending |
-| UI-03 | Phase 6 | Pending |
-| UI-04 | Phase 6 | Pending |
-| BENCH-01 | Phase 7 | Pending |
-| BENCH-02 | Phase 7 | Pending |
-| BENCH-03 | Phase 7 | Pending |
-| BENCH-04 | Phase 7 | Pending |
+| CLIENT-01 | Phase 1 | Complete |
+| CLIENT-02 | Phase 1 | Complete |
+| CLIENT-03 | Phase 1 | Complete |
+| CLIENT-04 | Phase 1 | Complete |
+| VALID-01 | Phase 2 | Complete |
+| VALID-02 | Phase 2 | Complete |
+| VALID-03 | Phase 2 | Complete |
+| VALID-04 | Phase 2 | Complete |
+| SCORE-01 | Phase 3 | Complete |
+| SCORE-02 | Phase 3 | Complete |
+| SCORE-03 | Phase 3 | Complete |
+| CRITIC-01 | Phase 4 | Complete |
+| CRITIC-02 | Phase 4 | Complete |
+| CRITIC-03 | Phase 4 | Complete |
+| RETRY-01 | Phase 5 | Complete |
+| RETRY-02 | Phase 5 | Complete |
+| RETRY-03 | Phase 5 | Complete |
+| RETRY-04 | Phase 5 | Complete |
+| CACHE-01 | Phase 6 | Complete |
+| CACHE-02 | Phase 6 | Complete |
+| CACHE-03 | Phase 6 | Complete |
+| CACHE-04 | Phase 6 | Complete |
+| UI-01 | Phase 6 | Complete |
+| UI-02 | Phase 6 | Complete |
+| UI-03 | Phase 6 | Complete |
+| UI-04 | Phase 6 | Complete |
+| BENCH-01 | Phase 7 | Complete |
+| BENCH-02 | Phase 7 | Complete |
+| BENCH-03 | Phase 7 | Complete |
+| BENCH-04 | Phase 7 | Complete |

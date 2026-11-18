@@ -22,3 +22,4 @@ This project uses the **Get Shit Done (GSD)** execution framework for planning a
 - `/gsd-execute-phase <phase>`: Execute plans for a phase.
 - `/gsd-verify-work <phase>`: Formally verify deliverables and metrics.
 - `/gsd-progress`: Inspect current progress and velocity.
+

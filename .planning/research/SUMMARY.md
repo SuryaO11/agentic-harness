@@ -15,3 +15,4 @@ This targeted research pass confirms that the architecture and locked core contr
 
 ## Core Stack Consensus
 - **Python 3.11+**, **Streamlit**, **SQLite3**, **Pydantic v2**, **Sentence Transformers** (`all-MiniLM-L6-v2`), and **Groq Cloud API** (Llama 3.1 8B Instant) with **Ollama** fallback.
+

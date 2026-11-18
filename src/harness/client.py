@@ -254,3 +254,4 @@ def get_llm_client(
         raise ValueError(
             f"Unsupported LLM provider '{active_provider}'. Supported: 'groq', 'ollama'."
         )
+
