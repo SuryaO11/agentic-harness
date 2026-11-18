@@ -32,4 +32,4 @@ agentic-dashboard = "harness.dashboard:main"
 where = ["src"]
 
 [tool.vercel]
-entrypoint = "api/index.py"
+entrypoint = "index.py"

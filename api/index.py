@@ -50,3 +50,4 @@ class handler(BaseHTTPRequestHandler):
             "message": "Agentic Harness API endpoint active."
         }
         self.wfile.write(json.dumps(res, indent=2).encode("utf-8"))
+
