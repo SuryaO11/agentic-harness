@@ -10,12 +10,7 @@ src_path = Path(__file__).parent / "src"
 if str(src_path) not in sys.path:
     sys.path.insert(0, str(src_path))
 
-
-# --- WSGI callable for Vercel / WSGI servers ---
-def app(environ, start_response):
-    """Standard WSGI entrypoint for Vercel and serverless platforms."""
-    status = "200 OK"
-    html_content = """<!DOCTYPE html>
+HTML_PORTAL = """<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -35,14 +30,14 @@ def app(environ, start_response):
 </head>
 <body>
     <div class="card">
-        <span class="badge">Service: Active</span>
+        <span class="badge">Vercel Service: Active</span>
         <h1>🤖 Agentic Harness v1.2</h1>
         <p>Explainable Self-Correcting Reliability Framework for Large Language Models.</p>
         
         <div class="note-box">
             <strong>🌐 Streamlit Observability Dashboard:</strong><br>
-            The full interactive UI (with query runner, validator breakdown, critic diagnostic cards, and SQLite cache metrics) runs on <strong>Streamlit</strong>, which uses persistent stateful WebSockets.<br><br>
-            Deploy or access it for free with 1 click on <strong>Streamlit Community Cloud</strong> (<a href="https://share.streamlit.io" target="_blank">share.streamlit.io</a>) using file <code>app.py</code> or <code>run_dashboard.py</code>.
+            The full interactive dashboard (query runner, validator breakdown, critic diagnostic feedback, and SQLite cache metrics) runs on <strong>Streamlit</strong> with real-time persistent WebSockets.<br><br>
+            Host or open it for free with 1 click on <strong>Streamlit Community Cloud</strong> (<a href="https://share.streamlit.io" target="_blank">share.streamlit.io</a>) using entrypoint <code>app.py</code> or <code>run_dashboard.py</code>.
         </div>
 
         <a class="btn" href="https://github.com/SuryaO11/agentic-harness" target="_blank">View GitHub Repository</a>
@@ -50,16 +45,41 @@ def app(environ, start_response):
     </div>
 </body>
 </html>"""
-    response_body = html_content.encode("utf-8")
+
+
+# --- Hybrid WSGI / ASGI entrypoint for Vercel (tool.vercel.entrypoint = "index:app") ---
+def app(scope_or_environ, receive_or_start_response=None, send=None):
+    """Hybrid WSGI/ASGI entrypoint callable as 'app' for Vercel Python runtime."""
+    # ASGI invocation: app(scope, receive, send)
+    if send is not None:
+        async def asgi_handler():
+            body = HTML_PORTAL.encode("utf-8")
+            await send({
+                "type": "http.response.start",
+                "status": 200,
+                "headers": [
+                    [b"content-type", b"text/html; charset=utf-8"],
+                    [b"content-length", str(len(body)).encode("utf-8")],
+                ],
+            })
+            await send({
+                "type": "http.response.body",
+                "body": body,
+            })
+        return asgi_handler()
+
+    # WSGI invocation: app(environ, start_response)
+    status = "200 OK"
+    body = HTML_PORTAL.encode("utf-8")
     headers = [
         ("Content-Type", "text/html; charset=utf-8"),
-        ("Content-Length", str(len(response_body))),
+        ("Content-Length", str(len(body))),
     ]
-    start_response(status, headers)
-    return [response_body]
+    receive_or_start_response(status, headers)
+    return [body]
 
 
-# --- Standard BaseHTTPRequestHandler for Vercel Python runtime ---
+# --- BaseHTTPRequestHandler fallback for Vercel function runtime ---
 class handler(BaseHTTPRequestHandler):
     """Vercel HTTP handler."""
 
@@ -78,7 +98,7 @@ class handler(BaseHTTPRequestHandler):
         self.wfile.write(json.dumps(data, indent=2).encode("utf-8"))
 
 
-# --- Streamlit Execution Path (when launched locally or on Streamlit Cloud) ---
+# --- Streamlit Execution Path (when launched locally or via Streamlit Cloud) ---
 if __name__ == "__main__":
     try:
         from streamlit.runtime.scriptrunner import get_script_run_ctx
